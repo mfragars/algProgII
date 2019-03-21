@@ -1,23 +1,15 @@
+"""Classe Windows"""
+
 import pygame
 
-class janela(object):
-        width=800
-        heigth=600
-        title="Oi, sou o PyGame" 
+class window(object):
+        """Implementa objeto de janela usando PYGame"""
+        def __init__(self):
+            """Inicializa objeto window"""
+            self._width , self._heigth = size = (800, 600)
+            self._title = "Oi, sou o PyGame"
+            pygame.display.set_mode(size)
+            pygame.display.set_caption(self._title)
 
-
-def main():
-
-    pygame.init()
-    screen = pygame.display.set_mode((janela.width, janela.heigth))
-    pygame.display.set_caption(janela.title)
-    done = False
-
-    while not done:
-            for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                            done = True
-            
-            pygame.display.flip()
-if __name__== "__main__":
-  main()
+if __name__ == "__main__":
+    janela = window()
