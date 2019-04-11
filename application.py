@@ -15,8 +15,7 @@ class Application:
     def run(self):
         self.running = True
         while self.running:
-            w.draw(ball)
-            w.update()
+            pygame.draw.circle(w._screen, (0, 255, 0), 0, 10, 1)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
