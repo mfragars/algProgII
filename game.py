@@ -29,12 +29,12 @@ class Game:
         pygame.draw.circle(w.screen, (0, 255,0), (self.x,self.y), ball.r)
     
     def update(self):
-        if (self.x <= w._heigth-ball.r and self.x > ball.r) or (self.y <= w._heigth-ball.r and self.y > ball.r):
-            self.x += 2
-            self.y += 2
-        elif self.x == w._heigth-ball.r and self.y > ball.r:
-            self.x = 100
-            self.y += 2
+        if self.x <= w._heigth-ball.r and self.x > ball.r:
+            self.x += 1
+            self.y += 1
+        elif self.x == w._heigth-ball.r and self.y <= w._width-ball.r:
+            self.x -= 1
+            self.y += 1
         
 
         ball.move(self.x, self.y)
